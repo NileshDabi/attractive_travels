@@ -1,0 +1,106 @@
+.trpBldPg .trpBldSct {
+    padding: 10px;
+    background: #fff;
+}
+.dstSrchCtr input {
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px 10px 10px 50px;
+    font-size: 14px;
+    border-color: #ddd;
+}
+.dstSrchCtr {
+    position: relative;
+    width: 720px;
+    margin: 20px auto 0;
+    text-align: center;
+}
+input[type="search"], 
+input[type="email"], 
+input[type="text"], 
+input[type="number"], 
+input[type="password"] {
+    border: 1px solid #ccc;
+    color: #333;
+    padding: 5px;
+    width: 91.4%;
+}
+.dstSrchCtr {
+    position: relative;
+    width: 720px;
+    margin: 20px auto 0;
+    text-align: center;
+}
+.dstSrchCtr i {
+    position: absolute;
+    top: 12px;
+    left: 20px;
+    color: #aaa;
+}
+
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.dstSrchCtr input {
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px 10px 10px 50px;
+    font-size: 14px;
+    border-color: #ddd;
+}
+.dstLst {
+    width: 770px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.u_block {
+    min-height: 0;
+}
+.dstLst .dstItm {
+    width: 175px;
+    height: 120px;
+    transition: all 0.25s ease-in-out;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 5px;
+    cursor: pointer;
+}
+.dstLst .dstItm .dstItmOp {
+    display: table;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.2);
+}
+.dstLst .dstItm .dstNm {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-shadow: 0 2px 0 rgba(0,0,0, 0.7);
+}
+@media screen and (max-width: 850px) {
+    .dstSrchCtr, .dstLst, .calLst, .durLst, .tagLst {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .dstLst .dstItm {
+        width: 46%;
+        height: 100px;
+    }
+}

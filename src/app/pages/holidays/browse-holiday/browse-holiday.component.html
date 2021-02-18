@@ -1,0 +1,191 @@
+<div class="page-header page-header-small">
+  <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/dubai.jpg');">
+  </div>
+  <div class="container">
+   <div class="content-center">
+      <h1 class="title">{{ title | uppercase }}</h1>
+   </div>
+  </div>
+</div>
+<div class="mainContentWrp pkg-summary">
+ 
+  <div class="h-fx h-fx-justify-between store-dts" *ngIf="sights?.length">
+   <div class="row">
+      <div class="col-md-3">
+         <div class="filters-section">
+            <h6 class="fl-heading">Activities/Sightseeing</h6>
+            <small class="fl-subheading">Goa</small>
+            <div class="options-container">
+               <div class="form-check" *ngFor="let item of filters">
+                  <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" [value]="item">
+                        <span class="form-check-sign"></span>
+                        {{item}}
+                  </label>
+               </div>
+               <!-- <div class="form-check">
+                  <label class="form-check-label">
+                     <input class="form-check-input" type="checkbox">
+                     <span class="form-check-sign"></span>
+                     Unchecked
+                  </label>
+               </div>
+               <div class="form-check">
+                  <label class="form-check-label">
+                     <input class="form-check-input" type="checkbox">
+                     <span class="form-check-sign"></span>
+                     Unchecked
+                  </label>
+               </div>
+               <div class="form-check">
+                  <label class="form-check-label">
+                     <input class="form-check-input" type="checkbox">
+                     <span class="form-check-sign"></span>
+                     Unchecked
+                  </label>
+               </div>
+               <div class="form-check">
+                  <label class="form-check-label">
+                     <input class="form-check-input" type="checkbox">
+                     <span class="form-check-sign"></span>
+                     Unchecked
+                  </label>
+               </div>    
+               <div class="form-check">
+                  <label class="form-check-label">
+                     <input class="form-check-input" type="checkbox">
+                     <span class="form-check-sign"></span>
+                     Unchecked
+                  </label>
+               </div>
+               <div class="form-check">
+                  <label class="form-check-label">
+                     <input class="form-check-input" type="checkbox">
+                     <span class="form-check-sign"></span>
+                     Unchecked
+                  </label>
+               </div>
+               <div class="form-check">
+                  <label class="form-check-label">
+                     <input class="form-check-input" type="checkbox">
+                     <span class="form-check-sign"></span>
+                     Unchecked
+                  </label>
+               </div>
+               <div class="form-check">
+                  <label class="form-check-label">
+                     <input class="form-check-input" type="checkbox">
+                     <span class="form-check-sign"></span>
+                     Unchecked
+                  </label>
+               </div> -->
+            </div>
+         </div>
+         <hr>
+         <div class="filters-section">
+            <h6 class="fl-heading">Duration of stay</h6>
+            <div class="options-container">
+               <div class="form-check" *ngFor="let dr of duration">
+                  <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" [value]="dr">
+                        <span class="form-check-sign"></span>
+                        {{dr}} NIGHT
+                  </label>
+               </div>
+            </div>
+         </div>
+         <hr>
+         <div class="filters-section">
+            <h6 class="fl-heading">Star Rating</h6>
+            <div class="options-container">
+               <div class="form-check" *ngFor="let rt of ratings">
+                  <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" [value]="rt">
+                        <span class="form-check-sign"></span>
+                        {{rt}} STAR
+                  </label>
+               </div>
+            </div>
+         </div>
+         <hr>
+         <div class="filters-section">
+            <h6 class="fl-heading">Star Rating</h6>
+            <div class="options-container">
+               <nouislider class="slider slider-section" [connect]="true" [min]="1" [max]="5" [step]="1" [(ngModel)]="doubleSlider" [tooltips]="true"></nouislider>
+            </div>
+         </div>
+         <hr>
+      </div>
+
+      <div class="col-md-9">
+         <div class="h-fx-basis75">
+            <div class="rsltCtr u_block">
+               <div class="rsltSrtCtr u_invisible"></div>
+               <div class="rsltCntCtr">
+                  <ng-container *ngFor="let item of sights; index as i">
+                     <div class="toursLstCtr u_block" [id]="item?.highlights">
+                        <h2 *ngIf="item.highlights !== sights[i-1]?.highlights">{{item?.highlights}}</h2>
+                        <div class="toursLst">
+                           <div class="tourShVw u_block">
+                              <a class="productUrl shw_load_on_click">
+                                 <div class="imgBlk">
+                                    <img [src]="item?.url">
+                                 </div>
+                                 <div class="dscBlk">
+                                    <h3>{{item?.title}}</h3>
+                                    <span class="stars">
+                                    <img src="assets/static/images/ico/star.png" alt="" style="float:left">
+                                    <img src="assets/static/images/ico/star.png" alt="" style="float:left">
+                                    <img src="assets/static/images/ico/star.png" alt="" style="float:left">
+                                    </span>
+                                    <div class="bkdCtr u_clear" style="color:#fd5722; margin-top: 25px;">{{item?.sub_title}}</div>
+                                    <div class="h-fx highlight">
+                                       <div class="instantBooking">
+                                          <i class="now-ui-icons business_bulb-63"></i> <span>Instant Booking</span>
+                                       </div>
+                                       <div class="customizable">
+                                          <i class="now-ui-icons ui-1_check"></i> <span>Customizable</span>
+                                       </div>
+                                       <div class="payments">
+                                          <i class="now-ui-icons ui-1_check"></i> <span> Flexible payments</span>
+                                       </div>
+                                    </div>
+                                    <div class="bkdCtr" style="margin-top:5px">{{item?.description}}</div>
+                                 </div>
+                                 <div class="priceBlk">
+                                    <div class="prcCtr">
+                                       <span class="prcD">₹ {{item?.price | number}}</span>
+                                    </div>
+                                    <div>
+                                       <span class="prcD">per person</span>
+                                    </div>
+                                    <div class="durCtr">
+                                       <span>Duration</span><br>
+                                       {{item?.duration}} days
+                                    </div>
+                                    <button 
+                                    type="button" 
+                                    class="search-button-sec btn--primary"
+                                    (click)="contactPage(item)"
+                                    >
+                                    View Details
+                                    </button>
+                                 </div>
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </ng-container>
+               </div>
+            </div>
+         </div>
+      </div>
+
+   </div>
+  </div>
+
+  <div class="text-center" *ngIf="!sights?.length">
+     <h2>No data found</h2>
+
+  </div>
+</div>

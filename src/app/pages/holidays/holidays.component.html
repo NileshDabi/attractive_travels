@@ -1,0 +1,66 @@
+<div class="wrapper">
+    <div class="page-header page-header-small">
+        <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/shifaaz-shamoon-qtbV_8P_Ksk-unsplash.jpg');">
+        </div>
+        <div class="container">
+            <div class="content-center">
+                <h1 class="title">Create a Customized Holiday Quote Instantly</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="trpBldPg">
+        <div class="trpBldSct">
+           <div class="dstSrchCtr"><i class="icon-Search"></i><input type="text" placeholder="Type a destination"></div>
+           <div class="dstLst u_block">
+              <div class="dstItm" style="background:#04448c">
+                 <div class="dstItmOp">
+                    <div class="dstNm" style="background:transparent;bottom:30px;">Create Your Own<br>Itinerary</div>
+                 </div>
+              </div>
+              <ng-container *ngFor="let item of holidays">
+                 <div 
+                 class="dstItm dstItmSrchble" 
+                 [routerLink]="item?.routerLink" 
+                 [attr.data-search]="item?.data_search" 
+                 [ngStyle] ="{'background-image': 'url(' + item?.imgUrl +')'}">
+                    <div class="dstItmOp">
+                       <div class="dstNm">{{item?.title}}</div>
+                    </div>
+                 </div>
+              </ng-container>
+              
+           </div>
+           <!-- <div class="trpBldMsgBtm mrgn2T u_alignC mrgnB">Want to create your own Itinerary ? <a target="_blank" href="/package/create-custom-trip?uid=4705878" data-ajax="false">Click here</a></div> -->
+        </div>
+     </div>
+ 
+    <footer class="footer footer-default">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="https://www.creative-tim.com">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.creative-tim.com/about-us">
+                            About Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://blog.creative-tim.com">
+                            Blog
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/creativetimofficial/now-ui-kit/blob/master/LICENSE.md">
+                            MIT License
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</div>

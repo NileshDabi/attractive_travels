@@ -1,0 +1,44 @@
+[
+    {
+        "title": "Goa",
+        "imgUrl": "//cdn.yourholiday.me/static/dynimg/destination/86/300x150/2236938-2236937_goa-1.jpg",
+        "routerLink": "/holiday/browse/goa",
+        "data_search": "Goa, Goa, Asia, South Asia, India, West India, Goa, Goa"
+    },
+    {
+        "title": "Jammu and Kashmir",
+        "imgUrl": "//cdn.yourholiday.me/static/dynimg/destination/81/300x150/2210495-2210494_kashmir.jpg",
+        "routerLink": "/holiday/browse/jammuandkasmir",
+        "data_search": "Jammu and Kashmir, Srinagar, Gulmarg, Srinagar Houseboat, Sonamarg, Pahalgam, Patnitop, Katra, Tsokar, Alchi, Nubra Valley, Jispa, Sham Valley, Sarchu, Pangong, Leh, Tso Moriri, Asia, South Asia, India, North India, Himalayan North, Jammu and Kashmir"
+    },
+    {
+        "title": "Kerala",
+        "imgUrl": "//cdn.yourholiday.me/static/dynimg/destination/76/300x150/2210468-2210467_kerala-1.jpg",
+        "routerLink": "/holiday/browse/kerala",
+        "data_search": "Kerala, Munnar, Kovalam, Kannur, Alleppey, Thekkady, Wayanad, Vagamon, Poovar, Bekal, Trivandrum, Kollam, Athirappilly, Kumarakom, Kochi, Guruvayoor, Varkala, Asia, South Asia, India, South India, Kerala"
+    },
+    {
+        "title": "Himachal Pradesh",
+        "imgUrl": "//cdn.yourholiday.me/static/dynimg/destination/30/300x150/1741562-1741561_4jpg.jpg",
+        "routerLink": "/holiday/browse/himachalPradesh",
+        "data_search": "Himachal Pradesh, Shimla, Narkanda, Kasauli, Parwanoo, Chail, Shoja, Palampur, Chamba (Himachal), Manali, Khajjiar, Dalhousie, Dharamshala, McLeod Ganj, Asia, South Asia, India, North India, Himalayan North, Himachal Pradesh"
+    },
+    {
+        "title": "Sikkim",
+        "imgUrl": "//cdn.yourholiday.me/static/dynimg/destination/43/300x150/2210695-2210694_sikkim2.jpg",
+        "routerLink": "/holiday/browse/sikkim",
+        "data_search": "Sikkim, Gangtok, Lachung, Lachen, Pelling, Asia, South Asia, India, North-East India, Sikkim"
+    }, 
+    {
+        "title": "Delhi",
+        "imgUrl": "//cdn.yourholiday.me/static/dynimg/destination/64/1200x600/2210699-2210698_delhi.jpg",
+        "routerLink": "/holiday/browse/delhi",
+        "data_search": "Delhi, Delhi, Asia, South Asia, India, North India, Delhi NCR, Delhi"
+    },
+    {
+        "title": "Ladakh",
+        "imgUrl": "//cdn.yourholiday.me/static/dynimg/destination/7/1200x600/2210615-2210614_leh.jpg",
+        "routerLink": "/holiday/browse/ladakh",
+        "data_search": "Ladakh, Tsokar, Alchi, Nubra Valley, Jispa, Sham Valley, Sarchu, Pangong, Leh, Tso Moriri, Asia, South Asia, India, North India, Himalayan North, Jammu and Kashmir, Ladakh"
+    }
+]
