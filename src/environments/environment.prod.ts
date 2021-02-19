@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: ''
+  apiUrl: 'https://whispering-sierra-96324.herokuapp.com/holidays'
 };

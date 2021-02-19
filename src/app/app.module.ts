@@ -12,11 +12,15 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpService } from './services/http.service';
 import { BrowserModule } from '@angular/platform-browser';
+import { LoginComponent } from './pages/login/login.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         NavbarComponent,
+        LoginComponent,
+        SignUpComponent,
     ],
     imports: [
         BrowserModule,
