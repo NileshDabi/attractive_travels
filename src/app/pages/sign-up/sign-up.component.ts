@@ -9,7 +9,9 @@ import { HttpService } from '../../services/http.service';
 })
 export class SignUpComponent implements OnInit, OnDestroy {
   signupForm:FormGroup;
-
+  data : Date = new Date();
+  focus;
+  focus1;
   constructor(private fb: FormBuilder,
               private httpService: HttpService) { }
 
