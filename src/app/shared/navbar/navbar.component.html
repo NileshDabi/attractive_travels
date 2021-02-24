@@ -43,50 +43,56 @@
                       <p>Holidays</p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" *ngIf="userInfo">
                   <a class="nav-link" [routerLink]="['/sightseeing']">
                     <!-- <i class="now-ui-icons files_paper"></i> -->
                     <p>Sightseeing</p>
                   </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" *ngIf="userInfo">
                   <a class="nav-link">
                     <!-- <i class="now-ui-icons files_paper"></i> -->
                     <p>Learn</p>
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link">
+                <li class="nav-item" *ngIf="userInfo?.role === 'owner'">
+                  <a class="nav-link" [routerLink]="['/quotes']">
                     <!-- <i class="now-ui-icons files_paper"></i> -->
                     <p>My Quotes</p>
                   </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" *ngIf="userInfo">
                   <a class="nav-link">
                     <!-- <i class="now-ui-icons files_paper"></i> -->
                     <p>My leads</p>
                   </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" *ngIf="!userInfo">
                   <a class="nav-link" [routerLink]="['/login']">
                     <!-- <i class="now-ui-icons files_paper"></i> -->
                     <p>Login</p>
                   </a>
                 </li>
+                <li class="nav-item" *ngIf="userInfo" (click)="logout()">
+                  <a class="nav-link">
+                    <!-- <i class="now-ui-icons files_paper"></i> -->
+                    <p>Log Out</p>
+                  </a>
+                </li>
                 <li class="nav-item">
-                  <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
+                  <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom">
                     <i class="fab fa-twitter"></i>
                     <p class="d-lg-none d-xl-none">Twitter</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank">
+                  <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom">
                     <i class="fab fa-facebook-square"></i>
                     <p class="d-lg-none d-xl-none">Facebook</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
+                  <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom">
                     <i class="fab fa-instagram"></i>
                     <p class="d-lg-none d-xl-none">Instagram</p>
                   </a>

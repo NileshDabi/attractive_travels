@@ -1,6 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpService } from '../../services/http.service';
+import { StorageService } from '../../services/storage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,13 +11,16 @@ import { HttpService } from '../../services/http.service';
 })
 export class LoginComponent implements OnInit, OnDestroy {
   loginForm: FormGroup;
+  formSubmitting = false;
 
   data : Date = new Date();
   focus;
   focus1;
 
   constructor(private fb: FormBuilder,
-              private httpService: HttpService) { }
+              private httpService: HttpService,
+              private storageService: StorageService,
+              private router: Router) { }
 
   ngOnInit() {
     this.initiForm();
@@ -37,14 +42,19 @@ export class LoginComponent implements OnInit, OnDestroy {
     if(this.loginForm.invalid) {
       return alert('please fill valid details');
     }
+    this.formSubmitting = true;
     this.httpService.post(this.loginForm.value, 'user/login/').subscribe(
       res => {
         if(res.message) {
-          localStorage.setItem('authToken', res.token);
+          this.storageService.saveToSession('authToken',res.token);
+          this.storageService.saveToSession('userInfo',res);
+          this.router.navigate(['/']);
           alert('success');
         }
+        this.formSubmitting = false;
         console.log(res);
       }, err => {
+        this.formSubmitting = false;
         if(err.error.message) {
           alert(err.error.message);
         }

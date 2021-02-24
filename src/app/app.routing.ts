@@ -11,6 +11,7 @@ import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.compo
 import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { AuthGuard } from './@core/auth.guard';
+import { AdminGuard } from './@core/admin.guard';
 
 const routes: Routes =[
     { path: '',                component: ComponentsComponent },
@@ -33,7 +34,7 @@ const routes: Routes =[
     { path: 'quotes', 
     loadChildren: () => import('../app/pages/quotes/quotes.module')
     .then(m=> m.QuotesModule),
-    canActivate: [AuthGuard]
+    canActivate: [AdminGuard]
     },
     { path: 'login',       component: LoginComponent },
     { path: 'signup',       component: SignUpComponent },

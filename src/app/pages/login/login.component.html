@@ -26,7 +26,13 @@
                           </div>
                         </div>
                         <div class="footer text-center">
-                            <button type="submit" class="btn btn-success btn-round btn-lg btn-block">Login</button>
+                            <button 
+                            [disabled]="formSubmitting" 
+                            type="submit" 
+                            class="btn btn-success btn-round btn-lg btn-block">
+                                <ng-container *ngIf="!formSubmitting">Login</ng-container>
+                                <span class="spinner" *ngIf="formSubmitting"></span>
+                            </button>
                         </div>
                     </form>
                     <div class="pull-left">

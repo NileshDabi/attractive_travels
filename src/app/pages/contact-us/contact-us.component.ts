@@ -18,28 +18,36 @@ export class ContactUsComponent implements OnInit {
   ngOnInit(): void {
     const data = JSON.parse(this.route.snapshot.queryParams.item);
     this.initForm();
+    this.patchValue(data);
   }
 
   initForm() {
     this.contactForm = this.fb.group({
-      email: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      mobile: ['', [Validators.required]],
       location: ['', [Validators.required]],
       date_of_arrival: ['', [Validators.required]],
       hotel_category: ['', [Validators.required]],
-      number_of_nights_with_places: ['', [Validators.required]],
-      passenger_name: ['', [Validators.required]],
-      number_of_pax_with_age: ['', [Validators.required]],
-      number_of_rooms: ['', [Validators.required]],
-      number_of_extra_bed: ['', [Validators.required]],
-      meal_plan: ['', [Validators.required]],
-      sightseeing: ['', [Validators.required]],
-      transfer_by: ['', [Validators.required]],
-      travel_by: ['', [Validators.required]],
-      remark: ['', [Validators.required]],
+      number_of_nights_with_places: [''],
+      passenger_name: [''],
+      number_of_pax_with_age: [''],
+      number_of_rooms: [''],
+      number_of_extra_bed: [''],
+      meal_plan: [''],
+      sightseeing: [''],
+      transfer_by: [''],
+      travel_by: [''],
+      remark: [''],
     })
   }
 
   get f() { return this.contactForm.controls; }
+
+  patchValue(value) {
+    this.f.location.patchValue(value.title);
+    this.f.hotel_category.patchValue(value.ratings);
+    this.f.number_of_nights_with_places.patchValue(value.sub_title);
+  }
 
   onSubmit() {
     if (this.contactForm.invalid) {

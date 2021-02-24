@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { StorageService } from '../../services/storage.service';
 
 @Component({
     selector: 'app-navbar',
@@ -9,15 +10,26 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
 export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
+    userInfo: any;
 
-    constructor(public location: Location, private element : ElementRef) {
+    constructor(public location: Location,
+                private element : ElementRef,
+                private storageService: StorageService) {
         this.sidebarVisible = false;
     }
 
     ngOnInit() {
-        const navbar: HTMLElement = this.element.nativeElement;
-        this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
+      const navbar: HTMLElement = this.element.nativeElement;
+      this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
+      this.storageService.userDataSubscription.subscribe(user => {
+        this.userInfo = user;
+      });
     }
+
+    logout() {
+        this.storageService.logout();
+    }
+
     sidebarOpen() {
         const toggleButton = this.toggleButton;
         const html = document.getElementsByTagName('html')[0];
