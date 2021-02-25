@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpService } from '../../services/http.service';
 import { StorageService } from '../../services/storage.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-login',
@@ -48,19 +49,27 @@ export class LoginComponent implements OnInit, OnDestroy {
         if(res.message) {
           this.storageService.saveToSession('authToken',res.token);
           this.storageService.saveToSession('userInfo',res);
-          this.router.navigate(['/']);
-          alert('success');
+          this.router.navigate(['/holiday']);
+          this.notify('Login', 'Successfully Logged in', 'success');
         }
         this.formSubmitting = false;
         console.log(res);
       }, err => {
         this.formSubmitting = false;
         if(err.error.message) {
-          alert(err.error.message);
+          this.notify('Login Error', err.error.message, 'error');
         }
         console.log(err);
       }
     )
+  }
+
+  notify(title = '', message = '', code:any = 'warning') {
+    Swal.fire({
+      icon: code,
+      title: title,
+      text: message
+    });
   }
 
   ngOnDestroy(){

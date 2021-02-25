@@ -14,6 +14,7 @@ import { HttpService } from './services/http.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 
 @NgModule({
     declarations: [
@@ -32,7 +33,8 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
         AppRoutingModule,
         ComponentsModule,
         ExamplesModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        AutocompleteLibModule
     ],
     providers: [HttpService],
     bootstrap: [AppComponent]

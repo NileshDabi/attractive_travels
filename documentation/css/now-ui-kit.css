@@ -5545,7 +5545,7 @@ body {
 }
 
 .navbar.navbar-transparent {
-    background-color: transparent !important;
+    background-color: #010101db !important;
     box-shadow: none;
     color: #FFFFFF;
     padding-top: 20px;

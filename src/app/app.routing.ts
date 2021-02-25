@@ -39,7 +39,7 @@ const routes: Routes =[
     { path: 'login',       component: LoginComponent },
     { path: 'signup',       component: SignUpComponent },
     // { path: 'nucleoicons',          component: NucleoiconsComponent },
-    // { path: 'examples/landing',     component: LandingComponent },
+    { path: 'examples/landing',     component: LandingComponent },
     // { path: 'examples/login',       component: LoginComponent },
     // { path: 'examples/profile',     component: ProfileComponent },
     { path: '**', redirectTo: '', pathMatch: 'full' },

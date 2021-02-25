@@ -13,6 +13,7 @@ import { NucleoiconsComponent } from './nucleoicons/nucleoicons.component';
 import { ComponentsComponent } from './components.component';
 import { NotificationComponent } from './notification/notification.component';
 import { NgbdModalBasic } from './modal/modal.component';
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 
 @NgModule({
     imports: [
@@ -21,7 +22,8 @@ import { NgbdModalBasic } from './modal/modal.component';
         NgbModule,
         NouisliderModule,
         RouterModule,
-        JwBootstrapSwitchNg2Module
+        JwBootstrapSwitchNg2Module,
+        AutocompleteLibModule
       ],
     declarations: [
         ComponentsComponent,
