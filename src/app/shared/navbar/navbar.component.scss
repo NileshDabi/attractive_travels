@@ -1,4 +1,18 @@
 .navbar {
     background: #051937;
-    background-color: #010101db !important;
+    // background-color: #010101db !important;
+}
+::ng-deep .navbar-color {
+    a {
+        color: #000 !important;
+    }
+    .button-bar {
+        background: #000000 !important;
+    }
+    button .navbar-toggler-bar {
+        background: #130000 !important;
+    }
+} 
+::ng-deep.sidebar-collapse .navbar-collapse:before {
+    background: linear-gradient(#fdf9f8 0%, #000 80%) !important;
 }

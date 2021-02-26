@@ -1,0 +1,168 @@
+<div class="wrapper mt-5">
+    <section class="row">
+        <div class="col-12 col-md">
+            <label class="explore-txt">Attractive Travel</label>
+            <form>
+                <div class="form-section">
+                    <div class="row form-container" style="padding-left: 15px;padding-top: 15px;">
+                        <div class="col-md-6 form-group">
+                            <span> Destination</span>
+                            <ng-autocomplete 
+                              [data]="data"
+                              [searchKeyword]="keyword"
+                              (selected)='selectEvent($event)'
+                              (inputChanged)='onChangeSearch($event)'
+                              (inputFocused)='onFocused($event)'
+                              [itemTemplate]="itemTemplate">                                 
+                            </ng-autocomplete>
+                            
+                            <ng-template #itemTemplate let-item>
+                            <a [innerHTML]="item.name"></a>
+                            </ng-template>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <span> No. of Nights</span>
+                            <select name="cars" id="cars">
+                               <option [value]="item" *ngFor="let item of nights">{{item}} Night</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <span> Travel Date</span>
+                            <input type="date" placeholder="Enter Date" class="input-control">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <span> No. of person</span>
+                            <select name="cars" id="person">
+                                <option [value]="item" *ngFor="let item of nights">{{item}}</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <span> Email</span>
+                            <input type="email" placeholder="Enter Email" class="input-control">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <span> Phone</span>
+                            <input type="tel" placeholder="Enter Phone Number" class="input-control">
+                        </div>
+                    </div>
+                    <button class="col-12 btn btn-primary explore-btn">Explore</button>
+                </div>
+
+            </form>
+        </div>
+        <div class="col-12 col-md">
+            <img src="../../assets/img/thousand-01 1.png" class="side-img" alt="">
+        </div>
+    </section>
+    
+    <!-- <span id="divider">
+        <h2 class="text-center">Browse Holiday</h2>
+    </span> -->
+
+    <section id="middle">
+        <div class="card-wrapper">
+            <div class="row">
+                <div class="col-12 col-md">
+                    <div class="card">
+                        <img src="../../../assets/img/dubai.jpg">
+                        <div class="descriptions">
+                            <h1>Dubai</h1>
+                            <p>
+                                Dubai is situated on the Persian Gulf coast of the United Arab Emirates and is roughly at sea level (16 m or 52 ft above). The emirate of Dubai shares borders with Abu Dhabi in the south, Sharjah in the northeast, and the Sultanate of Oman in the southeast. ... Dubai lies directly within the Arabian Desert.
+                            </p>
+                            <button>
+                                <i class="fab fa-youtube"></i>
+                                Play trailer on YouTube
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md">
+                    <div class="card">
+                        <img src="../../../assets/img/denys-nevozhai-guNIjIuUcgY-unsplash.jpg">
+                        <div class="descriptions">
+                            <h1>Dubai</h1>
+                            <p>
+                                Dubai is situated on the Persian Gulf coast of the United Arab Emirates and is roughly at sea level (16 m or 52 ft above). The emirate of Dubai shares borders with Abu Dhabi in the south, Sharjah in the northeast, and the Sultanate of Oman in the southeast. ... Dubai lies directly within the Arabian Desert.
+                            </p>
+                            <button>
+                                <i class="fab fa-youtube"></i>
+                                Play trailer on YouTube
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md">
+                    <div class="card">
+                        <img src="../../../assets/img/zq-lee-DcyL0IoCY0A-unsplash.jpg">
+                        <div class="descriptions">
+                            <h1>John Wick 3</h1>
+                            <p>
+                                Dubai is situated on the Persian Gulf coast of the United Arab Emirates and is roughly at sea level (16 m or 52 ft above). The emirate of Dubai shares borders with Abu Dhabi in the south, Sharjah in the northeast, and the Sultanate of Oman in the southeast. ... Dubai lies directly within the Arabian Desert.
+                            </p>
+                            <button>
+                                <i class="fab fa-youtube"></i>
+                                Play trailer on YouTube
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md">
+                    <div class="card">
+                        <img src="../../../assets/img/pietro-de-grandi-T7K4aEPoGGk-unsplash.jpg">
+                        <div class="descriptions">
+                            <h1>John Wick 3</h1>
+                            <p>
+                                After gunning down a member of the High Table -- the shadowy international assassin's guild -- legendary hit man John Wick finds himself stripped of the organization's protective services. Now stuck with a $14 million bounty on his head, Wick must fight his way through the streets of New York as he becomes the target of the world's most ruthless killers.
+                            </p>
+                            <button>
+                                <i class="fab fa-youtube"></i>
+                                Play trailer on YouTube
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="row" id="second">
+        <div class="col-12 col-md"><img src="../../assets/img/Thousand-02 1.png" class="second-side-img" alt=""></div>
+        <div class="col-12 col-md">
+            <h2 class="second-head1">A new way to explore the world </h2>
+            <h4 class="second-subhead">For decades travellers have reached for Lonely Planet books when looking to plan and execute their perfect trip, but now, they can also let Lonely Planet Experiences lead the way</h4>
+            <button class="btn learnmore-btn">Learn more</button>
+        </div>
+    </section>
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a routerLink="/">Home</a></li>
+                            <li><a routerLink="/holiday">Holiday</a></li>
+                            <li><a routerLink="/quotes">Quotes</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a routerLink="/">Home</a></li>
+                            <li><a routerLink="/holiday">Holiday</a></li>
+                            <li><a routerLink="/quotes">Quotes</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Attractive Travels</h3>
+                        <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">Attractive Travels © 2021</p>
+            </div>
+        </footer>
+    </div>
+</div>

@@ -8,19 +8,20 @@
               <span class="button-bar"></span>
           </a>
            <div ngbDropdownMenu>
-             <a class="dropdown-header">Dropdown header</a>
-             <a class="dropdown-item" href="#">Action</a>
-             <a class="dropdown-item" href="#">Another action</a>
-             <a class="dropdown-item" href="#">Something else here</a>
+             <a class="dropdown-header">Browse</a>
+             <a class="dropdown-item" routerLink="/create-destination">Create Destination</a>
+             <!-- <a class="dropdown-item" href="#">Another action</a>
+             <a class="dropdown-item" href="#">Something else here</a> -->
              <div class="dropdown-divider"></div>
-             <a class="dropdown-item" href="#">Separated link</a>
+             <a class="dropdown-item" routerLink="/holiday">Holiday</a>
+             <a class="dropdown-item" routerLink="/sightseeing">Sightseeing</a>
              <div class="dropdown-divider"></div>
-             <a class="dropdown-item" href="#">One more separated link</a>
+             <a class="dropdown-item" routerLink="/quotes">My Quotes</a>
            </div>
          </div>
       </div>
         <div class="navbar-translate">
-            <a class="navbar-brand" [routerLink]="['/index']" placement="bottom" ngbTooltip="Designed by Invision. Coded by Creative Tim">
+            <a class="navbar-brand" [routerLink]="['/index']" placement="bottom" ngbTooltip="attractivetravels.com">
                 Attractive Travels
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
@@ -49,12 +50,6 @@
                     <p>Sightseeing</p>
                   </a>
                 </li>
-                <li class="nav-item" *ngIf="userInfo">
-                  <a class="nav-link">
-                    <!-- <i class="now-ui-icons files_paper"></i> -->
-                    <p>Learn</p>
-                  </a>
-                </li>
                 <li class="nav-item" *ngIf="userInfo?.role === 'owner'">
                   <a class="nav-link" [routerLink]="['/quotes']">
                     <!-- <i class="now-ui-icons files_paper"></i> -->
@@ -65,6 +60,12 @@
                   <a class="nav-link">
                     <!-- <i class="now-ui-icons files_paper"></i> -->
                     <p>My leads</p>
+                  </a>
+                </li>
+                <li class="nav-item" *ngIf="userInfo">
+                  <a class="nav-link" routerLink="/create-destination">
+                    <!-- <i class="now-ui-icons files_paper"></i> -->
+                    <p>Contact</p>
                   </a>
                 </li>
                 <li class="nav-item" *ngIf="!userInfo">

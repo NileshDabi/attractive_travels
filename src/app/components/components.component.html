@@ -1,117 +1,28 @@
 <div class="wrapper">
-    <div id="header">
-        <ul>
-            <li><img src="../../assets/img/logo.png" alt=""></li>
-            <li class="ml-auto">
-                <span routerLink="/">Home</span>
-                <span routerLink="/holiday">Holiday</span>
-                <span routerLink="/sightseeing">Sightseeing</span>
-                <span>My Leads</span>
-                <span routerLink="/quotes">My Quotes</span>
-                <span routerLink="/login" *ngIf="!userInfo">
-                    <button class="btn btn-success">Login</button>
-                </span>
-                <span routerLink="/signup" *ngIf="!userInfo">
-                    <button class="btn btn-primary">Register</button>
-                </span>
-                <span *ngIf="userInfo" (click)="logout()">
-                    <button class="btn btn-primary">Log out</button>
-                </span>
-            </li>
-        </ul>
-    </div>
-    <section class="row">
-        <div class="col-12 col-md">
-            <label class="explore-txt">Explore and Travel</label>
-            <form>
-                <div class="form-section">
-                    <div class="row form-container" style="padding-left: 15px;padding-top: 15px;">
-                        <div class="col-md-6 form-group">
-                            <span> Destination</span>
-                            <ng-autocomplete 
-                              [data]="data"
-                              [searchKeyword]="keyword"
-                              (selected)='selectEvent($event)'
-                              (inputChanged)='onChangeSearch($event)'
-                              (inputFocused)='onFocused($event)'
-                              [itemTemplate]="itemTemplate">                                 
-                            </ng-autocomplete>
-                            
-                            <ng-template #itemTemplate let-item>
-                            <a [innerHTML]="item.name"></a>
-                            </ng-template>
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <span> No. of Nights</span>
-                            <select name="cars" id="cars">
-                               <option [value]="item" *ngFor="let item of nights">{{item}} Night</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <span> Travel Date</span>
-                            <input type="date" placeholder="Enter Date" class="input-control">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <span> No. of person</span>
-                            <select name="cars" id="person">
-                                <option [value]="item" *ngFor="let item of nights">{{item}}</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <span> Email</span>
-                            <input type="email" placeholder="Enter Email" class="input-control">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <span> Phone</span>
-                            <input type="tel" placeholder="Enter Phone Number" class="input-control">
-                        </div>
-                    </div>
-                    <button class="col-12 btn btn-success explore-btn">Explore</button>
-                </div>
+     <div class="page-header clear-filter">
+       <div class="page-header-image rellax-header" data-rellax-speed="-7" style="background-image: url('assets/img/zq-lee-DcyL0IoCY0A-unsplash.jpg');">
 
-            </form>
-        </div>
-        <div class="col-12 col-md">
-            <img src="../../assets/img/thousand-01 1.png" class="side-img" alt="">
-        </div>
-    </section>
+       </div>
+         <div class="container">
+             <div class="content-center brand">
+                 <img class="n-logo" src="assets/img/now-logo.png" alt="">
+                 <h1 class="h1-seo">Attractive Travels</h1>
+                 <h5>Let's find your favorite vacation spot with us or popular hotels, the most visited beaches</h5>
+             </div>
+         </div>
+     </div>
+</div>
+<div class="wrapper">
+    <div class="page-header clear-filter">
+      <div class="page-header-image rellax-header" data-rellax-speed="-7" style="background-image: url('assets/img/zq-lee-DcyL0IoCY0A-unsplash.jpg');">
 
-    <section class="row" id="second">
-        <div class="col-12 col-md"><img src="../../assets/img/Thousand-02 1.png" class="second-side-img" alt=""></div>
-        <div class="col-12 col-md">
-            <h2 class="second-head1">A new way to explore the world </h2>
-            <h4 class="second-subhead">For decades travellers have reached for Lonely Planet books when looking to plan and execute their perfect trip, but now, they can also let Lonely Planet Experiences lead the way</h4>
-            <button class="btn learnmore-btn">Learn more</button>
-        </div>
-    </section>
-    <div class="footer-dark">
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 col-md-3 item">
-                        <h3>Services</h3>
-                        <ul>
-                            <li><a routerLink="/">Home</a></li>
-                            <li><a routerLink="/holiday">Holiday</a></li>
-                            <li><a routerLink="/quotes">Quotes</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-6 col-md-3 item">
-                        <h3>About</h3>
-                        <ul>
-                            <li><a routerLink="/">Home</a></li>
-                            <li><a routerLink="/holiday">Holiday</a></li>
-                            <li><a routerLink="/quotes">Quotes</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 item text">
-                        <h3>Attractive Travels</h3>
-                        <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
-                    </div>
-                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
-                </div>
-                <p class="copyright">Attractive Travels © 2021</p>
+      </div>
+        <div class="container">
+            <div class="content-center brand">
+                <img class="n-logo" src="assets/img/now-logo.png" alt="">
+                <h1 class="h1-seo">Attractive Travels</h1>
+                <h5>Let's find your favorite vacation spot with us or popular hotels, the most visited beaches</h5>
             </div>
-        </footer>
+        </div>
     </div>
 </div>

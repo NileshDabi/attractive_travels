@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   onSubmit() {
     if(this.loginForm.invalid) {
-      return alert('please fill valid details');
+      return  this.notify('Login', 'Please provide valid details', 'error');
     }
     this.formSubmitting = true;
     this.httpService.post(this.loginForm.value, 'user/login/').subscribe(
@@ -49,11 +49,10 @@ export class LoginComponent implements OnInit, OnDestroy {
         if(res.message) {
           this.storageService.saveToSession('authToken',res.token);
           this.storageService.saveToSession('userInfo',res);
-          this.router.navigate(['/holiday']);
+          this.router.navigate(['/create-destination']);
           this.notify('Login', 'Successfully Logged in', 'success');
         }
         this.formSubmitting = false;
-        console.log(res);
       }, err => {
         this.formSubmitting = false;
         if(err.error.message) {

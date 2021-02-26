@@ -16,3 +16,17 @@ export class AuthGuard implements CanActivate {
   }
   
 }
+
+@Injectable({
+  providedIn: 'root'
+})
+export class LoginGuard implements CanActivate {
+
+  constructor(private authService: AuthService) { }
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot) {
+    return this.authService.checLoggedIn();
+  }
+  
+}

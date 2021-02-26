@@ -15,6 +15,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
+import { CreateDestinationComponent } from './pages/create-destination/create-destination.component';
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import { AutocompleteLibModule } from 'angular-ng-autocomplete';
         NavbarComponent,
         LoginComponent,
         SignUpComponent,
+        CreateDestinationComponent,
     ],
     imports: [
         BrowserModule,

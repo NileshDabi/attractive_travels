@@ -30,4 +30,15 @@ export class AuthService {
       return false
     }
   }
+
+  checLoggedIn() {
+    const token = this.storageService.getSessionStorage('authToken');
+    const user = this.storageService.getSessionStorage('userInfo');
+    if(token && user) {
+      this.router.navigate(['/']);
+      return false
+    } else {
+      return true;
+    }
+  }
 }

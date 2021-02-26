@@ -10,11 +10,13 @@ import { ProfileComponent } from './examples/profile/profile.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
-import { AuthGuard } from './@core/auth.guard';
+import { AuthGuard, LoginGuard } from './@core/auth.guard';
 import { AdminGuard } from './@core/admin.guard';
+import { CreateDestinationComponent } from './pages/create-destination/create-destination.component';
 
 const routes: Routes =[
     { path: '',                component: ComponentsComponent },
+    { path: 'create-destination', component: CreateDestinationComponent },
     { path: 'holiday', 
     loadChildren: () => import('../app/pages/holidays/holidays.module')
     .then(m=> m.HolidaysModule)
@@ -36,8 +38,8 @@ const routes: Routes =[
     .then(m=> m.QuotesModule),
     canActivate: [AdminGuard]
     },
-    { path: 'login',       component: LoginComponent },
-    { path: 'signup',       component: SignUpComponent },
+    { path: 'login', canActivate:[LoginGuard], component: LoginComponent },
+    { path: 'signup',canActivate:[LoginGuard], component: SignUpComponent },
     // { path: 'nucleoicons',          component: NucleoiconsComponent },
     { path: 'examples/landing',     component: LandingComponent },
     // { path: 'examples/login',       component: LoginComponent },
