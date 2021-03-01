@@ -31,12 +31,13 @@ const routes: Routes =[
     },
     { path: 'contact', 
     loadChildren: () => import('../app/pages/contact-us/contact-us.module')
-    .then(m=> m.ContactUsModule)
+    .then(m=> m.ContactUsModule),
+    canActivate: [AuthGuard]
     },
     { path: 'quotes', 
     loadChildren: () => import('../app/pages/quotes/quotes.module')
     .then(m=> m.QuotesModule),
-    canActivate: [AdminGuard]
+    canActivate: [AuthGuard]
     },
     { path: 'login', canActivate:[LoginGuard], component: LoginComponent },
     { path: 'signup',canActivate:[LoginGuard], component: SignUpComponent },

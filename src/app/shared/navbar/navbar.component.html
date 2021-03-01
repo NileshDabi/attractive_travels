@@ -50,7 +50,7 @@
                     <p>Sightseeing</p>
                   </a>
                 </li>
-                <li class="nav-item" *ngIf="userInfo?.role === 'owner'">
+                <li class="nav-item" *ngIf="userInfo">
                   <a class="nav-link" [routerLink]="['/quotes']">
                     <!-- <i class="now-ui-icons files_paper"></i> -->
                     <p>My Quotes</p>

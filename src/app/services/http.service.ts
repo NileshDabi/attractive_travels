@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { StorageService } from './storage.service'
 
 @Injectable({
   providedIn: 'root'
@@ -9,22 +10,14 @@ export class HttpService {
   configUrl = 'assets/config.json';
   userInfo: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private storageService: StorageService) { }
 
   setHeaders(sendJWT = true) {
     let headers = new HttpHeaders();
-    if(this.userInfo && sendJWT) {
-      headers.append('Authorization', 'Token ' + this.userInfo.auth_token);
+    const token = this.storageService.getSessionStorage('authToken');
+    if(token && sendJWT) {
+      headers = headers.append('Authorization', 'Token ' + token);
     }
-    return headers;
-  }
-
-  setFormDataHeaders(sendJWT = true) {
-    let headers = new HttpHeaders();
-    if(this.userInfo && sendJWT) {
-      headers.append('Authorization', 'Token ' + this.userInfo.auth_token);
-    }
-    headers.append('Content-Type', 'multipart/form-data')
     return headers;
   }
 

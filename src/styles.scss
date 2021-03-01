@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/scss/bootstrap.scss";
+.no-scroll {
+  overflow: hidden !important;
+}
 .spinner {
     /* Spinner size and color */
     width: 1.5rem;

@@ -6,4 +6,5 @@
 export const environment = {
   production: false,
   apiUrl: 'https://whispering-sierra-96324.herokuapp.com'
+  // apiUrl: 'http://localhost:3000'
 };

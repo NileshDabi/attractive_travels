@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { getData } from 'ajv/dist/compile/context';
 import * as Rellax from 'rellax';
 import { HttpService } from '../../services/http.service';
+import { SpinnerService } from '../..//services/spinner.service';
 
 @Component({
   selector: 'app-holidays',
@@ -14,7 +15,8 @@ export class HolidaysComponent implements OnInit, OnDestroy {
   focus1;
   holidays: any[] = [];
 
-  constructor(private httpService: HttpService) { }
+  constructor(private httpService: HttpService,
+              private spinnerService: SpinnerService) { }
 
   ngOnInit() {
     var rellaxHeader = new Rellax('.rellax-header');
@@ -27,9 +29,11 @@ export class HolidaysComponent implements OnInit, OnDestroy {
   }
 
   getData() {
+    this.spinnerService.run();
     this.httpService.get('holidays').subscribe(res => {
       this.holidays = res;
-    })
+      this.spinnerService.stop();
+    }, err => this.spinnerService.stop());
   }
 
   ngOnDestroy(){

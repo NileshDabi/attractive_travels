@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { HttpService } from '../../../services/http.service';
+import { SpinnerService } from '../../../services/spinner.service';
 
 @Component({
   selector: 'app-browse-holiday',
@@ -18,6 +19,7 @@ export class BrowseHolidayComponent implements OnInit {
   title: string;
   constructor(private httpService: HttpService,
               private route: ActivatedRoute,
+              private spinnerService: SpinnerService,
               private router: Router) { }
 
   ngOnInit(): void {
@@ -26,7 +28,9 @@ export class BrowseHolidayComponent implements OnInit {
   }
 
   getData() {
+    this.spinnerService.run();
     this.httpService.get(`domestic/${this.title}`).subscribe(res => {
+      this.spinnerService.stop();
       this.sights = res.sights;
       this.filters = res.filters;
       this.duration = res.sights.map((i) => {
@@ -35,7 +39,7 @@ export class BrowseHolidayComponent implements OnInit {
       this.ratings = res.sights.map((i) => {
         return i.ratings;
       }).filter(this.onlyUnique);
-    })
+    }, err => this.spinnerService.stop());
   }
 
   onlyUnique(value, index, self) {
