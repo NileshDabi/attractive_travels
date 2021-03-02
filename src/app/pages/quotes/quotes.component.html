@@ -8,24 +8,5 @@
     </div>
 </div>
 <div class="container-fluid mt-4">
-    <table>
-        <thead>
-        <tr>
-            <th>S.N.</th>
-            <th>Location</th>
-            <th>Date</th>
-            <th>Email</th>
-            <th>Mobile</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let item of quotes; index as i">
-            <td> {{i+1}}</td>
-            <td>{{item?.location}}</td>
-            <td>{{item?.date_of_arrival}}</td>
-            <td>{{item?.email}}</td>
-            <td>{{item?.mobile}}</td>
-        </tr>
-        </tbody>
-    </table>
+    <ng2-smart-table [settings]="settings" [source]="quotes"></ng2-smart-table>
 </div>

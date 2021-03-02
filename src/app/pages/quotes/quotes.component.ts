@@ -10,6 +10,35 @@ import { SpinnerService } from '../../services/spinner.service';
 export class QuotesComponent implements OnInit {
   quotes: any[] = [];
 
+  settings = {
+    actions:false,
+    columns: {
+      // id: {
+      //   title: 'ID',
+      // },
+      location: {
+        title: 'Location',
+        filter: false
+      },
+      number_of_nights_with_places: {
+        title:'Number of Night',
+        filter: false
+      },
+      date_of_arrival: {
+        title: 'Date',
+        filter: false
+      },
+      email: {
+        title: 'Email',
+        filter: false
+      },
+      mobile: {
+        title: 'Mobile',
+        filter: false
+      }
+    }
+  };
+
   constructor(private httpService: HttpService,
               private spinnerService: SpinnerService) { }
 

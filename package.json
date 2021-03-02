@@ -13,6 +13,7 @@
   "private": true,
   "dependencies": {
     "@agm/core": "1.1.0",
+    "@akveo/ng2-completer": "^9.0.1",
     "@angular/animations": "11.0.4",
     "@angular/common": "11.0.4",
     "@angular/compiler": "11.0.4",
@@ -34,7 +35,9 @@
     "font-awesome": "4.7.0",
     "jquery": "3.5.1",
     "jw-bootstrap-switch-ng2": "2.0.5",
+    "ng2-completer": "^9.0.1",
     "ng2-nouislider": "1.8.2",
+    "ng2-smart-table": "^1.7.2",
     "nouislider": "14.6.3",
     "popper.js": "1.16.1",
     "rellax": "1.12.1",

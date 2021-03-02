@@ -54,7 +54,7 @@ export class AppComponent implements OnInit {
 
     setPages(event) {
         var navbar : HTMLElement = this.element.nativeElement.children[0].children[0];
-        if (event.url === '/create-destination') {
+        if (event.url === '/create-destination' || event.url === '/login') {
             this.enableHeader = false;
             window.document.activeElement.scrollTop = 0;
             navbar.classList.add('navbar-color');
