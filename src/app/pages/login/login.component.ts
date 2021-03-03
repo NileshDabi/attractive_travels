@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpService } from '../../services/http.service';
 import { StorageService } from '../../services/storage.service';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -25,11 +25,11 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.initiForm();
-      var body = document.getElementsByTagName('body')[0];
-      body.classList.add('login-page');
+    var body = document.getElementsByTagName('body')[0];
+    body.classList.add('login-page');
 
-      var navbar = document.getElementsByTagName('nav')[0];
-      navbar.classList.add('navbar-transparent');
+    var navbar = document.getElementsByTagName('nav')[0];
+    navbar.classList.add('navbar-transparent');
   }
 
   initiForm() {

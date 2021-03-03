@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpService } from '../../services/http.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contact-us',
@@ -13,6 +14,7 @@ export class ContactUsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private fb: FormBuilder,
+              private router: Router,
               private httpService: HttpService) { }
 
   ngOnInit(): void {
@@ -23,6 +25,7 @@ export class ContactUsComponent implements OnInit {
 
   initForm() {
     this.contactForm = this.fb.group({
+      destination: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       mobile: ['', [Validators.required]],
       location: ['', [Validators.required]],
@@ -47,15 +50,30 @@ export class ContactUsComponent implements OnInit {
     this.f.location.patchValue(value.title);
     this.f.hotel_category.patchValue(value.ratings);
     this.f.number_of_nights_with_places.patchValue(value.sub_title);
+    this.f.destination.patchValue(value.destination);
   }
 
   onSubmit() {
     if (this.contactForm.invalid) {
-      return alert('please fill all details')
+      return this.notify('Quote', 'Please fill all the details', 'danger');
     }
     this.httpService.post(this.contactForm.value, 'contact/add').subscribe(res => {
-      alert('submitted');
+      this.notify(
+        'Submitted Successfully',
+        'Check Your Quote In My Quote',
+        'success'
+        ).then(result => {
+        this.router.navigate(['/holiday']);
+      });
     })
+  }
+
+  notify(title = '', message = '', code:any = 'warning') {
+    return Swal.fire({
+      icon: code,
+      title: title,
+      text: message
+    });
   }
 
 }

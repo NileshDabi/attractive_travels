@@ -21,11 +21,6 @@ export class AppComponent implements OnInit {
         var navbar : HTMLElement = this.element.nativeElement.children[0].children[0];
         this._router = this.router.events.filter(event => event instanceof NavigationEnd).subscribe((event: NavigationEnd) => {
             this.setPages(event);
-            // if (event.url === '/create-destination') {
-            //     navbar.classList.add('navbar-color');
-            // } else {
-            //     navbar.classList.remove('navbar-color');
-            // }
             if (window.outerWidth > 991) {
                 window.document.children[0].scrollTop = 0;
             } else {
@@ -54,7 +49,8 @@ export class AppComponent implements OnInit {
 
     setPages(event) {
         var navbar : HTMLElement = this.element.nativeElement.children[0].children[0];
-        if (event.url === '/create-destination' || event.url === '/login') {
+        if (event.url === '/create-destination' || event.url === '/login' ||
+        event.url.includes('/quotes/view')) {
             this.enableHeader = false;
             window.document.activeElement.scrollTop = 0;
             navbar.classList.add('navbar-color');

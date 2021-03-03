@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../services/http.service';
 import { SpinnerService } from '../../services/spinner.service';
+import { StorageService } from '../../services/storage.service';
 
 @Component({
   selector: 'app-quotes',
@@ -9,6 +10,7 @@ import { SpinnerService } from '../../services/spinner.service';
 })
 export class QuotesComponent implements OnInit {
   quotes: any[] = [];
+  userInfo: any = {}
 
   settings = {
     actions:false,
@@ -16,9 +18,22 @@ export class QuotesComponent implements OnInit {
       // id: {
       //   title: 'ID',
       // },
+      destination: {
+        title: 'Destinations',
+        type: 'html',
+        filter: false,
+        valuePrepareFunction: (id) => {
+          if(this.userInfo.role === 'owner') {
+            return `<a href="quotes/view/${id}">${id.toUpperCase()}</a>`; 
+          } else {
+            return id.toUpperCase(); 
+          }
+        }
+      },
       location: {
         title: 'Location',
-        filter: false
+        type: 'html',
+        filter: false,
       },
       number_of_nights_with_places: {
         title:'Number of Night',
@@ -40,7 +55,10 @@ export class QuotesComponent implements OnInit {
   };
 
   constructor(private httpService: HttpService,
-              private spinnerService: SpinnerService) { }
+              private spinnerService: SpinnerService,
+              private storageService: StorageService) {
+                this.userInfo = storageService.getSessionStorage('userInfo');
+               }
 
   ngOnInit(): void {
     this.getContacts();

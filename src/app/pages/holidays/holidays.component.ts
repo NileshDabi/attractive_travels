@@ -14,6 +14,7 @@ export class HolidaysComponent implements OnInit, OnDestroy {
   focus;
   focus1;
   holidays: any[] = [];
+  backgroundImg: string;
 
   constructor(private httpService: HttpService,
               private spinnerService: SpinnerService) { }
@@ -31,6 +32,7 @@ export class HolidaysComponent implements OnInit, OnDestroy {
   getData() {
     this.spinnerService.run();
     this.httpService.get('holidays').subscribe(res => {
+      this.backgroundImg = res.back_img_url;
       this.holidays = res;
       this.spinnerService.stop();
     }, err => this.spinnerService.stop());

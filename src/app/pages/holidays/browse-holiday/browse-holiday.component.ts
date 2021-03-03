@@ -17,6 +17,7 @@ export class BrowseHolidayComponent implements OnInit {
   duration: any[] = [];
   ratings: any[] = [];
   title: string;
+  backgroundImg: string;
   constructor(private httpService: HttpService,
               private route: ActivatedRoute,
               private spinnerService: SpinnerService,
@@ -31,6 +32,7 @@ export class BrowseHolidayComponent implements OnInit {
     this.spinnerService.run();
     this.httpService.get(`domestic/${this.title}`).subscribe(res => {
       this.spinnerService.stop();
+      this.backgroundImg = res.back_img_url;
       this.sights = res.sights;
       this.filters = res.filters;
       this.duration = res.sights.map((i) => {
@@ -47,7 +49,8 @@ export class BrowseHolidayComponent implements OnInit {
   }
 
   contactPage(item) {
-    this.router.navigate(['/contact'], { queryParams:{item: JSON.stringify(item) }})    
+    item.destination = this.title;
+    this.router.navigate(['/contact'], { queryParams:{item: JSON.stringify(item)}})    
   }
 
 }
